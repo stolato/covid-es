@@ -9,5 +9,5 @@ Route.group(() => {
     Route.get('people', 'PersonController.index');
 }).prefix('/api/v1');
 
-Route.get('/teste', 'SyncController.read');
-Route.get('/download', 'SyncController.dowload');
+//Route.get('/teste', 'SyncController.read');
+//Route.get('/download', 'SyncController.dowload');
