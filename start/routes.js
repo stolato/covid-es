@@ -6,7 +6,8 @@ const Route = use('Route')
 Route.on('/').render('welcome')
 
 Route.group(() => {
-    Route.get('people', 'PersonController.index');
+    Route.get('people/:id', 'PersonController.index');
+    Route.get('citys', 'PersonController.getCitys');
 }).prefix('/api/v1');
 
 //Route.get('/teste', 'SyncController.read');
