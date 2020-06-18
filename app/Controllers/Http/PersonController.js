@@ -12,7 +12,8 @@ class PersonController {
         const all = await People.where('municipio',city).count();
         const ativo = await People.where('municipio',city).where('evolucao','-').count();
         const graphic = await Graphic.query().orderBy('date','desc').fetch();
-        return  { morte: obito, recuperado: cura, ativos: ativo, total: all, graphics: graphic }
+        const bairros = await People.where('municipio',city).aggregate([{$match: {municipio: city, evolucao: '-'}},{"$group" : { _id :"$bairro", count:{$sum:1}}}, {$sort:{"count":-1}}]);
+        return  { morte: obito, recuperado: cura, ativos: ativo, total: all, bairro: bairros, graphics: graphic }
     }
 
     async getCitys(){
