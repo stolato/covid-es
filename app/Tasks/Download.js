@@ -11,6 +11,7 @@ class Download extends Task {
 
   async handle () {
     const link = 'https://bi.static.es.gov.br/covid19/MICRODADOS.csv';
+    await fs.unlink('./files/file.csv');
     await api({
         method: "get",
         url: link,
