@@ -10,7 +10,7 @@ const Database = use('Database')
 
 class SyncController {
     async index(){
-        
+
     }
 
     async dowload(){
@@ -31,11 +31,11 @@ class SyncController {
         var linhas = itens.split(/\r?\n/);
         const t = [];
         const cab = linhas[0].split(';');
-        await linhas.forEach(async (linha) => {
+        await linhas.forEach((linha) => {
             const dado = linha.split(';');
             const obj = {};
             dado.forEach((v, i) => {
-                obj[(cab[i]).toLowerCase()] = v; 
+                obj[(cab[i]).toLowerCase()] = v;
             });
             t.push(obj);
         });

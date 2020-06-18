@@ -10,5 +10,5 @@ Route.group(() => {
     Route.get('citys', 'PersonController.getCitys');
 }).prefix('/api/v1');
 
-//Route.get('/teste', 'SyncController.read');
-//Route.get('/download', 'SyncController.dowload');
+Route.get('/teste', 'SyncController.read');
+Route.get('/download', 'SyncController.dowload');
